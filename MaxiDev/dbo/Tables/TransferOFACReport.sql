@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[TransferOFACReport] (
+    [id]                        INT            IDENTITY (1, 1) NOT NULL,
+    [idtransfer]                INT            NULL,
+    [idstatus]                  INT            NULL,
+    [dateoftransfer]            DATETIME       NULL,
+    [claimcode]                 NVARCHAR (MAX) NULL,
+    [idcustomer]                INT            NULL,
+    [Customername]              NVARCHAR (MAX) NULL,
+    [CustomerFirstLastName]     NVARCHAR (MAX) NULL,
+    [CustomerSecondLastName]    NVARCHAR (MAX) NULL,
+    [CustomerOfacPercent]       FLOAT (53)     DEFAULT ((0)) NULL,
+    [IsCustomerFullMatch]       BIT            DEFAULT ((0)) NOT NULL,
+    [CustomerMatch]             XML            NULL,
+    [idbeneficiary]             INT            NULL,
+    [BeneficiaryName]           NVARCHAR (MAX) NULL,
+    [BeneficiaryFirstLastName]  NVARCHAR (MAX) NULL,
+    [BeneficiarySecondLastName] NVARCHAR (MAX) NULL,
+    [BeneficiaryOfacPercent]    FLOAT (53)     DEFAULT ((0)) NULL,
+    [IsBeneficiaryFullMatch]    BIT            DEFAULT ((0)) NOT NULL,
+    [BeneficiaryMatch]          XML            NULL,
+    [IdUserRelease]             INT            NULL,
+    [UserNameRelease]           NVARCHAR (MAX) NULL,
+    [Note]                      NVARCHAR (MAX) NULL
+);
+

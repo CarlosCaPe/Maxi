@@ -1,0 +1,21 @@
+﻿
+
+CREATE PROCEDURE [dbo].[st_getGatewaysbyIdPayer] (@idPayer INT)
+/********************************************************************
+<Author> Fgonzalez </Author>
+<app> Corporate </app>
+<Description> Obtiene los diferente gateway configurados para un Pagador </Description>
+
+<ChangeLog>
+<log Date="14/06/2017" Author="Fgonzalez"> Creation</log>
+</ChangeLog>
+
+*********************************************************************/
+
+AS BEGIN
+SELECT DISTINCT g.IdGateway, GatewayName,g.Code
+FROM PayerConfig pc 
+JOIN Gateway g 
+ON g.IdGateway = pc.IdGateway 
+WHERE IdPayer =@idPayer AND g.Status =1
+END 

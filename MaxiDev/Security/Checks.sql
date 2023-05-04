@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [Checks]
+    AUTHORIZATION [dbo];
+

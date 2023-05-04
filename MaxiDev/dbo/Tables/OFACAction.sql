@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[OFACAction] (
+    [IdOFACAction]   INT            NOT NULL,
+    [NameOFACAction] NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_OFACAction] PRIMARY KEY CLUSTERED ([IdOFACAction] ASC) WITH (FILLFACTOR = 90)
+);
+

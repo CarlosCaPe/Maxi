@@ -1,0 +1,3 @@
+﻿CREATE PROCEDURE [dbo].[st_AMLPGetKYCAlerts]
+AS
+SELECT * FROM fnAMLPGetKYCAlerts()

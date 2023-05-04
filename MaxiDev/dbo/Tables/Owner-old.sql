@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[Owner-old] (
+    [IdOwner]          INT            IDENTITY (1, 1) NOT NULL,
+    [Name]             NVARCHAR (MAX) NULL,
+    [LastName]         NVARCHAR (MAX) NULL,
+    [SecondLastName]   NVARCHAR (MAX) NULL,
+    [Address]          NVARCHAR (MAX) NULL,
+    [City]             NVARCHAR (MAX) NULL,
+    [State]            NVARCHAR (MAX) NULL,
+    [Zipcode]          NVARCHAR (MAX) NULL,
+    [Phone]            NVARCHAR (MAX) NULL,
+    [Cel]              NVARCHAR (MAX) NULL,
+    [Email]            NVARCHAR (MAX) NULL,
+    [SSN]              NVARCHAR (MAX) NULL,
+    [IdType]           NVARCHAR (MAX) NULL,
+    [IdNumber]         NVARCHAR (MAX) NULL,
+    [IdExpirationDate] DATE           NULL,
+    [BornDate]         DATE           NULL,
+    [BornCountry]      NVARCHAR (MAX) NULL,
+    [CreationDate]     DATETIME       NULL,
+    [DateofLastChange] DATETIME       NULL,
+    [EnterByIdUser]    INT            NULL,
+    [IdStatus]         INT            NULL,
+    [CreditScore]      NVARCHAR (MAX) NULL,
+    [IdCounty]         INT            NULL
+);
+

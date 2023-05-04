@@ -1,0 +1,2 @@
+﻿CREATE USER [MAXI-SERVER-008\Administrator] FOR LOGIN [MAXI-SERVER-008\Administrator];
+

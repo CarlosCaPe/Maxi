@@ -1,0 +1,2 @@
+﻿CREATE USER [MAXINET\prodmaxi] FOR LOGIN [MAXINET\prodmaxi];
+

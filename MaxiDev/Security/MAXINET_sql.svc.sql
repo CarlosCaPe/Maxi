@@ -1,0 +1,2 @@
+﻿CREATE USER [MAXINET\sql.svc] FOR LOGIN [MAXINET\sql.svc];
+

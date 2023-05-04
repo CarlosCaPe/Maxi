@@ -1,0 +1,8 @@
+﻿--select * from CommissiondetailByOtherProducts
+
+create procedure st_GetCommissiondetailByOtherProducts
+(
+    @IdCommissionByOtherProducts int
+)
+as
+    select IdCommissionDetailByProvider,IdCommissionByOtherProducts,FromAmount,ToAmount,AgentCommissionInPercentage,CorporateCommissionInPercentage,DateOfLastChange,EnterByIdUser,ExtraAmount from CommissiondetailByOtherProducts where IdCommissionByOtherProducts=@IdCommissionByOtherProducts

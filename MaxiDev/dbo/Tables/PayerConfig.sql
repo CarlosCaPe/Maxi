@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[PayerConfig] (
+    [IdPayerConfig]              INT      IDENTITY (1, 1) NOT NULL,
+    [IdPayer]                    INT      NOT NULL,
+    [IdGateway]                  INT      NOT NULL,
+    [IdPaymentType]              INT      NOT NULL,
+    [IdCountryCurrency]          INT      NOT NULL,
+    [IdGenericStatus]            INT      NOT NULL,
+    [SpreadValue]                MONEY    NOT NULL,
+    [DateOfLastChange]           DATETIME NOT NULL,
+    [EnterByIdUser]              INT      NOT NULL,
+    [DepositHold]                BIT      NOT NULL,
+    [RequireBranch]              BIT      NOT NULL,
+    [EnabledSchedule]            BIT      DEFAULT ((0)) NOT NULL,
+    [StartTime]                  TIME (7) NULL,
+    [EndTime]                    TIME (7) NULL,
+    [BenCellPhoneIsRequired]     BIT      NULL,
+    [BranchCodeIsRequired]       BIT      DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [BenCellPhoneRequiredPrefix] BIT      CONSTRAINT [DF_PayerConfig_BenCellPhoneRequiredPrefix] DEFAULT ((0)) NOT NULL,
+    [BeneficiaryIdIsRequiered]   BIT      DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [PK_PayerConfig] PRIMARY KEY CLUSTERED ([IdPayerConfig] ASC) WITH (FILLFACTOR = 90),
+    CONSTRAINT [FK_PayerConfig_CountryCurrency] FOREIGN KEY ([IdCountryCurrency]) REFERENCES [dbo].[CountryCurrency] ([IdCountryCurrency]),
+    CONSTRAINT [FK_PayerConfig_Gateway] FOREIGN KEY ([IdGateway]) REFERENCES [dbo].[Gateway] ([IdGateway]),
+    CONSTRAINT [FK_PayerConfig_GenericStatus] FOREIGN KEY ([IdGenericStatus]) REFERENCES [dbo].[GenericStatus] ([IdGenericStatus]),
+    CONSTRAINT [FK_PayerConfig_Payer] FOREIGN KEY ([IdPayer]) REFERENCES [dbo].[Payer] ([IdPayer]),
+    CONSTRAINT [FK_PayerConfig_PaymentType] FOREIGN KEY ([IdPaymentType]) REFERENCES [dbo].[PaymentType] ([IdPaymentType])
+);
+

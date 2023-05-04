@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [MoneyGram]
+    AUTHORIZATION [dbo];
+

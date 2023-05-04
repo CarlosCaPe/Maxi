@@ -1,0 +1,26 @@
+﻿CREATE TABLE [MaxiMobile].[TransferAdditionalInfo] (
+    [IdTransferAdditionalInfo] INT            IDENTITY (1, 1) NOT NULL,
+    [IdTransfer]               INT            NOT NULL,
+    [Note]                     NVARCHAR (MAX) NULL,
+    [RequiereID]               BIT            DEFAULT ((0)) NOT NULL,
+    [RequiereProof]            BIT            DEFAULT ((0)) NOT NULL,
+    [CustomerOccupation]       BIT            DEFAULT ((0)) NOT NULL,
+    [CustomerAddress]          BIT            DEFAULT ((0)) NOT NULL,
+    [CustomerSSN]              BIT            DEFAULT ((0)) NOT NULL,
+    [IDNotLegible]             BIT            DEFAULT ((0)) NOT NULL,
+    [CustomerIDNumber]         BIT            DEFAULT ((0)) NOT NULL,
+    [CustomerDateOfBirth]      BIT            DEFAULT ((0)) NOT NULL,
+    [CustomerPlaceOfBirth]     BIT            DEFAULT ((0)) NOT NULL,
+    [CustomerIDExpiration]     BIT            DEFAULT ((0)) NOT NULL,
+    [CustomerFullName]         BIT            DEFAULT ((0)) NOT NULL,
+    [CustomerFullAddress]      BIT            DEFAULT ((0)) NOT NULL,
+    [BeneficiaryFullName]      BIT            DEFAULT ((0)) NOT NULL,
+    [BeneficiaryDateOfBirth]   BIT            DEFAULT ((0)) NOT NULL,
+    [BeneficiaryPlaceOfBirth]  BIT            DEFAULT ((0)) NOT NULL,
+    [BeneficiaryRequiereID]    BIT            DEFAULT ((0)) NOT NULL,
+    [SignReceipt]              BIT            DEFAULT ((0)) NOT NULL,
+    [NumDocs]                  INT            DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [PK_TransferAdditionalInfo] PRIMARY KEY CLUSTERED ([IdTransferAdditionalInfo] ASC),
+    UNIQUE NONCLUSTERED ([IdTransfer] ASC)
+);
+

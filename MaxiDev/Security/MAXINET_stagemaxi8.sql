@@ -1,0 +1,2 @@
+﻿CREATE USER [MAXINET\stagemaxi8] FOR LOGIN [MAXINET\stagemaxi8];
+

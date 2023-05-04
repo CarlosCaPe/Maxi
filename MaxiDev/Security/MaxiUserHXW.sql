@@ -1,0 +1,2 @@
+﻿CREATE USER [MaxiUserHXW] FOR LOGIN [MaxiUserHXW];
+

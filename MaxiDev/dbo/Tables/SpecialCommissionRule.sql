@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[SpecialCommissionRule] (
+    [IdSpecialCommissionRule] INT           IDENTITY (1, 1) NOT NULL,
+    [IdUserRequestedBy]       INT           NOT NULL,
+    [IdUserAuthorizer]        INT           NOT NULL,
+    [IdUserAuthorizedBy]      INT           NULL,
+    [Description]             VARCHAR (MAX) NOT NULL,
+    [Note]                    VARCHAR (MAX) NOT NULL,
+    [BeginDate]               DATE          NOT NULL,
+    [EndDate]                 DATE          NULL,
+    [IdAgent]                 INT           NULL,
+    [IdCountry]               INT           NULL,
+    [IdOwner]                 INT           NULL,
+    [ApplyForTransaction]     BIT           NOT NULL,
+    [IdGenericStatus]         INT           NOT NULL,
+    [DateOfLastChange]        DATETIME      NOT NULL,
+    [EnterByIdUser]           INT           NOT NULL,
+    [Accumulated]             BIT           NOT NULL,
+    CONSTRAINT [PK_SpecialCommissionRule] PRIMARY KEY CLUSTERED ([IdSpecialCommissionRule] ASC),
+    CONSTRAINT [FK_SpecialCommissionRule_Agent] FOREIGN KEY ([IdAgent]) REFERENCES [dbo].[Agent] ([IdAgent]),
+    CONSTRAINT [FK_SpecialCommissionRule_Country] FOREIGN KEY ([IdCountry]) REFERENCES [dbo].[Country] ([IdCountry]),
+    CONSTRAINT [FK_SpecialCommissionRule_GenericStatus] FOREIGN KEY ([IdGenericStatus]) REFERENCES [dbo].[GenericStatus] ([IdGenericStatus]),
+    CONSTRAINT [FK_SpecialCommissionRule_Owner] FOREIGN KEY ([IdOwner]) REFERENCES [dbo].[Owner] ([IdOwner]),
+    CONSTRAINT [FK_SpecialCommissionRule_Users] FOREIGN KEY ([IdUserRequestedBy]) REFERENCES [dbo].[Users] ([IdUser]),
+    CONSTRAINT [FK_SpecialCommissionRule_Users1] FOREIGN KEY ([IdUserAuthorizedBy]) REFERENCES [dbo].[Users] ([IdUser]),
+    CONSTRAINT [FK_SpecialCommissionRule_Users2] FOREIGN KEY ([IdUserAuthorizer]) REFERENCES [dbo].[Users] ([IdUser])
+);
+

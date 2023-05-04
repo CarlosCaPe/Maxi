@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[TransferFraudDetail] (
+    [IdTransferFraudDetail] INT            IDENTITY (1, 1) NOT NULL,
+    [IdTransferFraud]       INT            NOT NULL,
+    [IdCustomer]            INT            NOT NULL,
+    [IdBeneficiary]         INT            NOT NULL,
+    [IdCountryCurrency]     INT            NOT NULL,
+    [IdCountry]             INT            NOT NULL,
+    [IdCurrency]            INT            NOT NULL,
+    [IdStatus]              INT            NOT NULL,
+    [ClaimCode]             NVARCHAR (50)  NOT NULL,
+    [AmountInDollars]       MONEY          NOT NULL,
+    [Fee]                   MONEY          NOT NULL,
+    [DateOfTransfer]        DATETIME       NOT NULL,
+    [AmountInMN]            MONEY          NOT NULL,
+    [Folio]                 INT            NOT NULL,
+    [DepositAccountNumber]  NVARCHAR (MAX) NOT NULL,
+    [DateOfLastChange]      DATETIME       NOT NULL,
+    [EnterByIdUser]         INT            NOT NULL,
+    [OriginExRate]          MONEY          NOT NULL,
+    [OriginAmountInMN]      MONEY          NOT NULL,
+    [DateOfCreation]        DATETIME       NOT NULL,
+    CONSTRAINT [PK_TransferFraudDetail] PRIMARY KEY CLUSTERED ([IdTransferFraudDetail] ASC) WITH (FILLFACTOR = 90),
+    FOREIGN KEY ([IdTransferFraud]) REFERENCES [dbo].[TransferFraud] ([IdTransferFraud])
+);
+

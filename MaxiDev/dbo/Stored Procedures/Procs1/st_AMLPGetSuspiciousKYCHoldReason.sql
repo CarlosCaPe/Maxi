@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE [dbo].[st_AMLPGetSuspiciousKYCHoldReason]
+AS
+BEGIN
+	SELECT * FROM AMLP_SuspiciousKYCHoldReason s WITH(NOLOCK) ORDER BY s.Id
+END

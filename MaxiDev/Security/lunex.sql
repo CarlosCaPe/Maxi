@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [lunex]
+    AUTHORIZATION [dbo];
+

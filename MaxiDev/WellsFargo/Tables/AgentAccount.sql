@@ -1,0 +1,27 @@
+﻿CREATE TABLE [WellsFargo].[AgentAccount] (
+    [IdAgentAccount]    INT             IDENTITY (1, 1) NOT NULL,
+    [IdAgent]           INT             NOT NULL,
+    [Alias]             NVARCHAR (1000) NOT NULL,
+    [FirstName]         NVARCHAR (1000) NOT NULL,
+    [LastName]          NVARCHAR (1000) NOT NULL,
+    [ZipCode]           NVARCHAR (5)    NOT NULL,
+    [Street]            NVARCHAR (MAX)  NOT NULL,
+    [City]              NVARCHAR (MAX)  NOT NULL,
+    [State]             NVARCHAR (MAX)  NOT NULL,
+    [Country]           NVARCHAR (MAX)  NOT NULL,
+    [PhoneNUmber]       NVARCHAR (MAX)  NOT NULL,
+    [Email]             NVARCHAR (MAX)  NULL,
+    [BankName]          NVARCHAR (MAX)  NULL,
+    [AccountNumberData] VARBINARY (MAX) NOT NULL,
+    [RoutingNumberData] VARBINARY (MAX) NOT NULL,
+    [AccountType]       NVARCHAR (1)    NOT NULL,
+    [EnterByIDUser]     INT             NOT NULL,
+    [DateOfCreation]    DATETIME        NOT NULL,
+    [DateOfLastChange]  DATETIME        NOT NULL,
+    [IdGenericStatus]   INT             NOT NULL,
+    CONSTRAINT [PK_AgentAccount] PRIMARY KEY CLUSTERED ([IdAgentAccount] ASC) WITH (FILLFACTOR = 90),
+    CONSTRAINT [FK_AgentAccount_Agent] FOREIGN KEY ([IdAgent]) REFERENCES [dbo].[Agent] ([IdAgent]),
+    CONSTRAINT [FK_AgentAccount_GericStatus] FOREIGN KEY ([IdGenericStatus]) REFERENCES [dbo].[GenericStatus] ([IdGenericStatus]),
+    CONSTRAINT [FK_AgentAccount_User] FOREIGN KEY ([EnterByIDUser]) REFERENCES [dbo].[Users] ([IdUser])
+);
+

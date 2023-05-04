@@ -1,0 +1,2 @@
+﻿CREATE USER [MAXINET\lchavez] FOR LOGIN [MAXINET\lchavez];
+

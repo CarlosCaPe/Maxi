@@ -1,0 +1,4 @@
+﻿CREATE MESSAGE TYPE [//Maxi/Transfer/OriginDataType]
+    AUTHORIZATION [dbo]
+    VALIDATION = WELL_FORMED_XML;
+

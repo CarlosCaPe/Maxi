@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [Elastic]
+    AUTHORIZATION [UserMaxiDB];
+

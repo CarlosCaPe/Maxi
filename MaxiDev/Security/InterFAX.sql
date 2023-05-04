@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [InterFAX]
+    AUTHORIZATION [dbo];
+

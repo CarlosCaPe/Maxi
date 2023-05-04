@@ -1,0 +1,3 @@
+﻿create procedure st_GetPureminutesInfo
+as
+select IdPureMinutesInfo,AgentId,AgentRefKey,AgentKey,AgentSecretKey from pureminutesinfo

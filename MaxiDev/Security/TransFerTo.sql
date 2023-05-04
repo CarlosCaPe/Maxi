@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [TransFerTo]
+    AUTHORIZATION [dbo];
+

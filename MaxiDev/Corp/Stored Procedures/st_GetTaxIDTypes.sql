@@ -1,0 +1,9 @@
+﻿CREATE PROCEDURE Corp.st_GetTaxIDTypes
+AS
+BEGIN
+	
+
+	SELECT T.IdTaxIDType, T.Name
+	FROM Corp.TaxIDType T WITH(NOLOCK)
+
+END

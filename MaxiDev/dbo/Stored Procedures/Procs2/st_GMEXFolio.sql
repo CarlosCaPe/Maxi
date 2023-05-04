@@ -1,0 +1,4 @@
+﻿CREATE PROCEDURE [dbo].[st_GMEXFolio]
+@straPayerName NVARCHAR (4000) NULL
+AS EXTERNAL NAME [SQLCLRs].[StoredProcedures].[ST_TNC_CLAIM_CODE_GEN]
+
